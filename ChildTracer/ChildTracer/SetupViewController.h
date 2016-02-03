@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SetupViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *batteryLevel;
 
 @end

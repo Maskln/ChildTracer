@@ -16,12 +16,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self checkBatteryPercentage];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)checkBatteryPercentage {
+    [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
+    UIDevice *myDevice = [UIDevice currentDevice];
+    
+    [myDevice setBatteryMonitoringEnabled:YES];
+    double batLeft = (float)[myDevice batteryLevel] * 100;
+    NSLog(@"%.f",batLeft);
+    
+    
+    NSString * levelLabel = [NSString stringWithFormat:@"%.f%%", batLeft];
+    
+    
+    self.batteryLevel.text = levelLabel;
 }
 
 /*

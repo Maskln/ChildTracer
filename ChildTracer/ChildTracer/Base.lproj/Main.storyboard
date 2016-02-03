@@ -101,18 +101,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.31836214661598206" green="0.90120261907577515" blue="0.043727755546569824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="57" y="204" width="66" height="27"/>
+                                </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="DKQ-fq-HMc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="DKQ-fq-HMc">
                                 <rect key="frame" x="86" y="169" width="429" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="57" y="245" width="300" height="22"/>
+                                </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="N7s-QQ-8Ch">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="N7s-QQ-8Ch">
                                 <rect key="frame" x="86" y="169" width="429" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="57" y="338" width="300" height="22"/>
+                                </variation>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpP-y0-hPr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpP-y0-hPr">
                                 <rect key="frame" x="86" y="128" width="66" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="kGs-YZ-crR"/>
@@ -121,10 +130,49 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.31836214661598206" green="0.90120261907577515" blue="0.043727755546569824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="57" y="298" width="66" height="27"/>
+                                </variation>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="100" minimumValueImage="OnePercent" maximumValueImage="HundredPercent" translatesAutoresizingMaskIntoConstraints="NO" id="bbB-Ja-kqr">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er3-lR-7lr">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Contacts">
+                                    <color key="titleColor" red="0.31836214661598206" green="0.90120261907577515" blue="0.043727755546569824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="57" y="413" width="152" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8en-VF-hsN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="About">
+                                    <color key="titleColor" red="0.31836214661598206" green="0.90120261907577515" blue="0.043727755546569824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="205" y="413" width="152" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yW-Ke-OGe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Trace">
+                                    <color key="titleColor" red="0.31836214661598206" green="0.90120261907577515" blue="0.043727755546569824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="205" y="451" width="152" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1d-Rb-I7i">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Log">
+                                    <color key="titleColor" red="0.31836214661598206" green="0.90120261907577515" blue="0.043727755546569824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="57" y="451" width="152" height="30"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -155,11 +203,18 @@
                                 <exclude reference="N7s-QQ-8Ch"/>
                                 <exclude reference="qpP-y0-hPr"/>
                                 <exclude reference="bbB-Ja-kqr"/>
+                                <exclude reference="Er3-lR-7lr"/>
+                                <exclude reference="8en-VF-hsN"/>
+                                <exclude reference="7yW-Ke-OGe"/>
+                                <exclude reference="W1d-Rb-I7i"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="DLv-9B-6Zu"/>
                                 <exclude reference="SSV-yc-HdI"/>
                                 <exclude reference="bOL-mr-evj"/>
+                                <exclude reference="W6e-wy-Z4Q"/>
+                                <exclude reference="16e-om-ycY"/>
+                                <exclude reference="qP0-dp-6Mc"/>
                                 <exclude reference="RCY-F5-9Uu"/>
                                 <exclude reference="dUc-F9-00T"/>
                                 <exclude reference="hKV-zp-HSb"/>
@@ -167,9 +222,6 @@
                                 <exclude reference="LjA-tZ-yi9"/>
                                 <exclude reference="gEz-xe-NDh"/>
                                 <exclude reference="mAN-10-9AL"/>
-                                <exclude reference="W6e-wy-Z4Q"/>
-                                <exclude reference="16e-om-ycY"/>
-                                <exclude reference="qP0-dp-6Mc"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -177,11 +229,18 @@
                                 <include reference="N7s-QQ-8Ch"/>
                                 <include reference="qpP-y0-hPr"/>
                                 <include reference="bbB-Ja-kqr"/>
+                                <include reference="Er3-lR-7lr"/>
+                                <include reference="8en-VF-hsN"/>
+                                <include reference="7yW-Ke-OGe"/>
+                                <include reference="W1d-Rb-I7i"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="DLv-9B-6Zu"/>
                                 <include reference="SSV-yc-HdI"/>
                                 <include reference="bOL-mr-evj"/>
+                                <include reference="W6e-wy-Z4Q"/>
+                                <include reference="16e-om-ycY"/>
+                                <include reference="qP0-dp-6Mc"/>
                                 <include reference="RCY-F5-9Uu"/>
                                 <include reference="dUc-F9-00T"/>
                                 <include reference="hKV-zp-HSb"/>
@@ -189,9 +248,6 @@
                                 <include reference="LjA-tZ-yi9"/>
                                 <include reference="gEz-xe-NDh"/>
                                 <include reference="mAN-10-9AL"/>
-                                <include reference="W6e-wy-Z4Q"/>
-                                <include reference="16e-om-ycY"/>
-                                <include reference="qP0-dp-6Mc"/>
                             </mask>
                         </variation>
                     </view>

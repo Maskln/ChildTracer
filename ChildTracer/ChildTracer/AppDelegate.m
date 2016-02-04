@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "SetupViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -28,6 +30,30 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    
+    //create new uiBackgroundTask
+    __block UIBackgroundTaskIdentifier bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
+        [app endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    }];
+    
+    //and create new timer with async call:
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        int refreshInterval = 2;
+        
+        //run function methodRunAfterBackground
+        NSTimer* t = [NSTimer scheduledTimerWithTimeInterval:refreshInterval
+                                                      target:[SetupViewController class]
+                                                    selector:@selector(startTimedTask)
+                                                    userInfo:nil
+                                                     repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:t forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop currentRunLoop] run];
+    });
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

@@ -10,6 +10,6 @@
 
 @interface SetupViewController : UIViewController
 
-+(void)startTimedTask;
+
 
 @end

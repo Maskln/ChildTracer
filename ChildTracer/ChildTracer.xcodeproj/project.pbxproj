@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41306D2A1C64CEC400FF4A33 /* BatteryChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 41306D291C64CEC400FF4A33 /* BatteryChecker.m */; };
 		41896B081C6003B3001D60F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41896B071C6003B3001D60F9 /* main.m */; };
 		41896B0B1C6003B3001D60F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41896B0A1C6003B3001D60F9 /* AppDelegate.m */; };
 		41896B111C6003B3001D60F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41896B0F1C6003B3001D60F9 /* Main.storyboard */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41306D281C64CEC400FF4A33 /* BatteryChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BatteryChecker.h; path = BackgroundTasks/BatteryChecker.h; sourceTree = "<group>"; };
+		41306D291C64CEC400FF4A33 /* BatteryChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BatteryChecker.m; path = BackgroundTasks/BatteryChecker.m; sourceTree = "<group>"; };
 		41896B031C6003B3001D60F9 /* ChildTracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildTracer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41896B071C6003B3001D60F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41896B091C6003B3001D60F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4140D9791C64CC12000052B2 /* BackgroundTasks */ = {
+			isa = PBXGroup;
+			children = (
+				41306D281C64CEC400FF4A33 /* BatteryChecker.h */,
+				41306D291C64CEC400FF4A33 /* BatteryChecker.m */,
+			);
+			name = BackgroundTasks;
+			sourceTree = "<group>";
+		};
 		41896AFA1C6003B3001D60F9 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +73,7 @@
 		41896B051C6003B3001D60F9 /* ChildTracer */ = {
 			isa = PBXGroup;
 			children = (
+				4140D9791C64CC12000052B2 /* BackgroundTasks */,
 				41896B1D1C60066D001D60F9 /* ViewControllers */,
 				41896B091C6003B3001D60F9 /* AppDelegate.h */,
 				41896B0A1C6003B3001D60F9 /* AppDelegate.m */,
@@ -123,6 +136,7 @@
 				TargetAttributes = {
 					41896B021C6003B3001D60F9 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 88R2PH6Y65;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -170,6 +184,7 @@
 				41EF45D41C61418200E87CDE /* SetupViewController.m in Sources */,
 				41896B201C6006A4001D60F9 /* StartUpViewController.m in Sources */,
 				41896B0B1C6003B3001D60F9 /* AppDelegate.m in Sources */,
+				41306D2A1C64CEC400FF4A33 /* BatteryChecker.m in Sources */,
 				41896B081C6003B3001D60F9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,11 +297,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChildTracer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mask.ChildTracer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -295,11 +313,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChildTracer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mask.ChildTracer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

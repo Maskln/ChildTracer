@@ -24,30 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-+(void)checkBatteryPercentage {
-    [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
-    UIDevice *myDevice = [UIDevice currentDevice];
-    
-    [myDevice setBatteryMonitoringEnabled:YES];
-    double batLeft = (float) [myDevice batteryLevel] * 100;
-    NSLog(@"%.f",batLeft);
-    
-    if (batLeft == -100) {
-        NSLog(@"No Battery found");
-    }else if (batLeft >= 90 && batLeft <= 95){
-        NSLog(@"I've Got you!");
-    }
-    
-    //NSString * levelLabel = [NSString stringWithFormat:@"%.f%%", batLeft];
-    
-    //self.batteryLevel.text = levelLabel;
-}
 
-
-
-+(void)startTimedTask {
-    [self checkBatteryPercentage];
-}
 
 /*
  #pragma mark - Navigation

@@ -15,9 +15,11 @@
 		41896B161C6003B3001D60F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41896B141C6003B3001D60F9 /* LaunchScreen.storyboard */; };
 		41896B201C6006A4001D60F9 /* StartUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41896B1F1C6006A4001D60F9 /* StartUpViewController.m */; };
 		41EF45D41C61418200E87CDE /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF45D31C61418200E87CDE /* SetupViewController.m */; };
+		CDF67787A7EE8A72B280E8CA /* libPods-ChildTracer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C44A0EDFC6F4828CC52F90 /* libPods-ChildTracer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3079963EAA604ABE8BD3DF55 /* Pods-ChildTracer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChildTracer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChildTracer/Pods-ChildTracer.debug.xcconfig"; sourceTree = "<group>"; };
 		41306D281C64CEC400FF4A33 /* BatteryChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BatteryChecker.h; path = BackgroundTasks/BatteryChecker.h; sourceTree = "<group>"; };
 		41306D291C64CEC400FF4A33 /* BatteryChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BatteryChecker.m; path = BackgroundTasks/BatteryChecker.m; sourceTree = "<group>"; };
 		41896B031C6003B3001D60F9 /* ChildTracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildTracer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +34,8 @@
 		41896B1F1C6006A4001D60F9 /* StartUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartUpViewController.m; sourceTree = "<group>"; };
 		41EF45D21C61418200E87CDE /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
 		41EF45D31C61418200E87CDE /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
+		B1C44A0EDFC6F4828CC52F90 /* libPods-ChildTracer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChildTracer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFC2973A1D9AED88EFDFD4AF /* Pods-ChildTracer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChildTracer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChildTracer/Pods-ChildTracer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF67787A7EE8A72B280E8CA /* libPods-ChildTracer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +64,8 @@
 			children = (
 				41896B051C6003B3001D60F9 /* ChildTracer */,
 				41896B041C6003B3001D60F9 /* Products */,
+				511D6EAC553E79C9C13C419A /* Pods */,
+				64DC65397AEC64C4E580A0FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +112,23 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		511D6EAC553E79C9C13C419A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3079963EAA604ABE8BD3DF55 /* Pods-ChildTracer.debug.xcconfig */,
+				DFC2973A1D9AED88EFDFD4AF /* Pods-ChildTracer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		64DC65397AEC64C4E580A0FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1C44A0EDFC6F4828CC52F90 /* libPods-ChildTracer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41896B1A1C6003B3001D60F9 /* Build configuration list for PBXNativeTarget "ChildTracer" */;
 			buildPhases = (
+				A1E688FF40C3FA9BB72BF64C /* Check Pods Manifest.lock */,
 				41896AFF1C6003B3001D60F9 /* Sources */,
 				41896B001C6003B3001D60F9 /* Frameworks */,
 				41896B011C6003B3001D60F9 /* Resources */,
+				4C6F6CD54339971D50C5F346 /* Embed Pods Frameworks */,
+				32D114E1048FBE877D87A3B1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,6 +202,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32D114E1048FBE877D87A3B1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChildTracer/Pods-ChildTracer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C6F6CD54339971D50C5F346 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChildTracer/Pods-ChildTracer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1E688FF40C3FA9BB72BF64C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		41896AFF1C6003B3001D60F9 /* Sources */ = {
@@ -295,6 +370,7 @@
 		};
 		41896B1B1C6003B3001D60F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3079963EAA604ABE8BD3DF55 /* Pods-ChildTracer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -311,6 +387,7 @@
 		};
 		41896B1C1C6003B3001D60F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFC2973A1D9AED88EFDFD4AF /* Pods-ChildTracer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

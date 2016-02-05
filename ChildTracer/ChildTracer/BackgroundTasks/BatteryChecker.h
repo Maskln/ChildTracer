@@ -10,6 +10,6 @@
 
 @interface BatteryChecker : UIView
 
-+(void)startTimedTask;
++(void)checkBatteryPercentage;
 
 @end

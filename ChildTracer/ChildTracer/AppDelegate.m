@@ -48,7 +48,7 @@
         //run function methodRunAfterBackground
         NSTimer* t = [NSTimer scheduledTimerWithTimeInterval:refreshInterval
                                                       target:[BatteryChecker class]
-                                                    selector:@selector(startTimedTask)
+                                                    selector:@selector(checkBatteryPercentage)
                                                     userInfo:nil
                                                      repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:t forMode:NSDefaultRunLoopMode];

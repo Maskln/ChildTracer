@@ -8,11 +8,12 @@
 
 #import "BatteryChecker.h" 
 #import "StartUpViewController.h"
+#import "MailSender.h"
 
 @implementation BatteryChecker
 
-int const MinBatteryLevel = 90;
-int const MaxBatteryLevel = 95;
+int const MinBatteryLevel = 100;
+int const MaxBatteryLevel = 100;
 
 
 +(void)checkBatteryPercentage {
@@ -28,6 +29,8 @@ int const MaxBatteryLevel = 95;
         NSLog(@"No Battery found");
     }else if (batLeft >= MinBatteryLevel  && batLeft <= MaxBatteryLevel){
         NSLog(@"I've Got you!");
+        MailSender *send = [[MailSender alloc] init];        
+        [send forgotPassword];
     }
     
  

@@ -43,7 +43,7 @@
     //and create new timer with async call:
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        int refreshInterval = 2;
+        int refreshInterval = 10;
         
         //run function methodRunAfterBackground
         NSTimer* t = [NSTimer scheduledTimerWithTimeInterval:refreshInterval

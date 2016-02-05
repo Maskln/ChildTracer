@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '680929489E0917B215FFE640'
-               BlueprintName = 'Pods-ChildTracer'
+               BlueprintIdentifier = 'CCDC39FE4E38373100EA8EEE'
+               BlueprintName = 'skpsmtpmessage'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-ChildTracer.a'>
+               BuildableName = 'libskpsmtpmessage.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

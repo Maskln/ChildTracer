@@ -10,6 +10,7 @@
 
 @interface SetupViewController : UIViewController
 
+- (IBAction)sendMail:(id)sender;
 
 
 @end

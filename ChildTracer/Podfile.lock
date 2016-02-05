@@ -20,11 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - skpsmtpmessage (0.0.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - skpsmtpmessage
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  skpsmtpmessage: f6e913380c784dd8d4a9f83c8790a302445a5e05
 
 COCOAPODS: 0.39.0

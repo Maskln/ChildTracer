@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		41306D2A1C64CEC400FF4A33 /* BatteryChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 41306D291C64CEC400FF4A33 /* BatteryChecker.m */; };
+		41306D2C1C650CA600FF4A33 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41306D2B1C650CA600FF4A33 /* MessageUI.framework */; };
+		41306D301C650D0D00FF4A33 /* MailSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 41306D2F1C650D0D00FF4A33 /* MailSender.m */; };
 		41896B081C6003B3001D60F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41896B071C6003B3001D60F9 /* main.m */; };
 		41896B0B1C6003B3001D60F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41896B0A1C6003B3001D60F9 /* AppDelegate.m */; };
 		41896B111C6003B3001D60F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41896B0F1C6003B3001D60F9 /* Main.storyboard */; };
@@ -22,6 +24,9 @@
 		3079963EAA604ABE8BD3DF55 /* Pods-ChildTracer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChildTracer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChildTracer/Pods-ChildTracer.debug.xcconfig"; sourceTree = "<group>"; };
 		41306D281C64CEC400FF4A33 /* BatteryChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BatteryChecker.h; path = BackgroundTasks/BatteryChecker.h; sourceTree = "<group>"; };
 		41306D291C64CEC400FF4A33 /* BatteryChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BatteryChecker.m; path = BackgroundTasks/BatteryChecker.m; sourceTree = "<group>"; };
+		41306D2B1C650CA600FF4A33 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		41306D2E1C650D0D00FF4A33 /* MailSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailSender.h; path = BackgroundTasks/MailSender.h; sourceTree = "<group>"; };
+		41306D2F1C650D0D00FF4A33 /* MailSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailSender.m; path = BackgroundTasks/MailSender.m; sourceTree = "<group>"; };
 		41896B031C6003B3001D60F9 /* ChildTracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildTracer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41896B071C6003B3001D60F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41896B091C6003B3001D60F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41306D2C1C650CA600FF4A33 /* MessageUI.framework in Frameworks */,
 				CDF67787A7EE8A72B280E8CA /* libPods-ChildTracer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +61,8 @@
 			children = (
 				41306D281C64CEC400FF4A33 /* BatteryChecker.h */,
 				41306D291C64CEC400FF4A33 /* BatteryChecker.m */,
+				41306D2E1C650D0D00FF4A33 /* MailSender.h */,
+				41306D2F1C650D0D00FF4A33 /* MailSender.m */,
 			);
 			name = BackgroundTasks;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 		64DC65397AEC64C4E580A0FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41306D2B1C650CA600FF4A33 /* MessageUI.framework */,
 				B1C44A0EDFC6F4828CC52F90 /* libPods-ChildTracer.a */,
 			);
 			name = Frameworks;
@@ -259,6 +268,7 @@
 				41EF45D41C61418200E87CDE /* SetupViewController.m in Sources */,
 				41896B201C6006A4001D60F9 /* StartUpViewController.m in Sources */,
 				41896B0B1C6003B3001D60F9 /* AppDelegate.m in Sources */,
+				41306D301C650D0D00FF4A33 /* MailSender.m in Sources */,
 				41306D2A1C64CEC400FF4A33 /* BatteryChecker.m in Sources */,
 				41896B081C6003B3001D60F9 /* main.m in Sources */,
 			);

@@ -7,6 +7,7 @@
 //
 
 #import "SetupViewController.h"
+#import "MailSender.h"
 
 @interface SetupViewController ()
 
@@ -36,4 +37,11 @@
  }
  */
 
+- (IBAction)sendMail:(id)sender {
+    
+    MailSender *send = [[MailSender alloc] init];
+    
+    [send forgotPassword];
+    
+}
 @end

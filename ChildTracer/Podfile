@@ -4,7 +4,8 @@
 # use_frameworks!
 
 target 'ChildTracer' do
-	  pod 'AFNetworking', '~> 2.6'
-
+	pod 'AFNetworking', '~> 2.6'
+	pod 'skpsmtpmessage'
+	pod 'skpsmtpmessage'
 end
 

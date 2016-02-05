@@ -173,6 +173,9 @@
                                         <include reference="LzM-g5-ifr"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="sendMail:" destination="2UF-U4-LiI" eventType="touchUpInside" id="FFG-Gz-dUw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -198,6 +201,11 @@
                                 <exclude reference="96a-8K-29C"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Mh1-k3-bvI"/>
+                                <exclude reference="jdg-p3-b7v"/>
+                                <exclude reference="h0F-j7-p6e"/>
+                                <exclude reference="1Cz-aN-x0i"/>
+                                <exclude reference="2dt-sc-3s1"/>
                                 <exclude reference="Jnv-Xx-BOO"/>
                                 <exclude reference="iXQ-On-MZJ"/>
                                 <exclude reference="qph-vn-Nn1"/>
@@ -206,11 +214,6 @@
                                 <exclude reference="kAO-u7-V6K"/>
                                 <exclude reference="p19-9j-Nfc"/>
                                 <exclude reference="sOM-w5-4sj"/>
-                                <exclude reference="h0F-j7-p6e"/>
-                                <exclude reference="1Cz-aN-x0i"/>
-                                <exclude reference="2dt-sc-3s1"/>
-                                <exclude reference="Mh1-k3-bvI"/>
-                                <exclude reference="jdg-p3-b7v"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -220,6 +223,11 @@
                                 <include reference="96a-8K-29C"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Mh1-k3-bvI"/>
+                                <include reference="jdg-p3-b7v"/>
+                                <include reference="h0F-j7-p6e"/>
+                                <include reference="1Cz-aN-x0i"/>
+                                <include reference="2dt-sc-3s1"/>
                                 <include reference="Jnv-Xx-BOO"/>
                                 <include reference="iXQ-On-MZJ"/>
                                 <include reference="qph-vn-Nn1"/>
@@ -228,11 +236,6 @@
                                 <include reference="kAO-u7-V6K"/>
                                 <include reference="p19-9j-Nfc"/>
                                 <include reference="sOM-w5-4sj"/>
-                                <include reference="h0F-j7-p6e"/>
-                                <include reference="1Cz-aN-x0i"/>
-                                <include reference="2dt-sc-3s1"/>
-                                <include reference="Mh1-k3-bvI"/>
-                                <include reference="jdg-p3-b7v"/>
                             </mask>
                         </variation>
                     </view>

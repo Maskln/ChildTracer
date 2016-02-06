@@ -11,5 +11,5 @@
 
 @interface MailSender : UIViewController<SKPSMTPMessageDelegate>
 
-- (IBAction)forgotPassword;
+- (IBAction)sendEmailTo: (NSString*) emailAddress : (NSString*) andEmailMessage;
 @end

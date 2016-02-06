@@ -41,7 +41,7 @@
     
     MailSender *send = [[MailSender alloc] init];
     
-    [send forgotPassword];
+    [send sendEmailTo: @"lyubomir.nanev@gmail.com" : @"Do you read me?"];
     
 }
 @end

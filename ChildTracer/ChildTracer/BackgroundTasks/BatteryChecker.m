@@ -6,7 +6,7 @@
 //  Copyright © 2016 Mask. All rights reserved.
 //
 
-#import "BatteryChecker.h" 
+#import "BatteryChecker.h"
 #import "StartUpViewController.h"
 #import "MailSender.h"
 
@@ -17,7 +17,7 @@ int const MaxBatteryLevel = 100;
 
 
 +(void)checkBatteryPercentage {
-  
+    
     [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
     UIDevice *myDevice = [UIDevice currentDevice];
     
@@ -29,20 +29,20 @@ int const MaxBatteryLevel = 100;
         NSLog(@"No Battery found");
     }else if (batLeft >= MinBatteryLevel  && batLeft <= MaxBatteryLevel){
         NSLog(@"I've Got you!");
-        MailSender *send = [[MailSender alloc] init];        
-        [send forgotPassword];
-    }
+        MailSender *send = [[MailSender alloc] init];
+        [send sendEmailTo: @"lyubomir.nanev@gmail.com" : @"Do you read me?"];
+    } 
     
- 
+    
 }
 
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

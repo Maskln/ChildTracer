@@ -817,7 +817,17 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
     {
         [self cleanUpStreams];
         
-        [delegate messageSent:self];
+        @try {
+            [delegate messageSent:self];
+            
+        }
+        @catch (NSException * e) {
+            return;
+        }
+        @finally {
+            return;
+        }
+       
     }
     else if (encounteredError)
     {

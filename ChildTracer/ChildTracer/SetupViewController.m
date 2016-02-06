@@ -8,8 +8,10 @@
 
 #import "SetupViewController.h"
 #import "MailSender.h"
+#import "AppDelegate.h"
 
 @interface SetupViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *mailField;
 
 @end
 
@@ -17,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
 }
 
@@ -39,9 +42,15 @@
 
 - (IBAction)sendMail:(id)sender {
     
-    MailSender *send = [[MailSender alloc] init];
+    AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    appDelegate.emailAddress = self.mailField.text;
     
-    [send sendEmailTo: @"lyubomir.nanev@gmail.com" : @"Do you read me?"];
     
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    [theTextField resignFirstResponder];
+    return YES;
 }
 @end

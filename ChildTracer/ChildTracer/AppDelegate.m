@@ -40,21 +40,22 @@
         bgTask = UIBackgroundTaskInvalid;
     }];
     
-    //and create new timer with async call:
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        int refreshInterval = 10;
-        
-        //run function methodRunAfterBackground
-        NSTimer* t = [NSTimer scheduledTimerWithTimeInterval:refreshInterval
-                                                      target:[BatteryChecker class]
-                                                    selector:@selector(checkBatteryPercentage)
-                                                    userInfo:nil
-                                                     repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:t forMode:NSDefaultRunLoopMode];
-        [[NSRunLoop currentRunLoop] run];
-    });
-    
+    if ( [self validateEmail:self.emailAddress]) {
+        //and create new timer with async call:
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            int refreshInterval = 10;
+            
+            //run function methodRunAfterBackground
+            NSTimer* t = [NSTimer scheduledTimerWithTimeInterval:refreshInterval
+                                                          target:[BatteryChecker class]
+                                                        selector:@selector(checkBatteryPercentage)
+                                                        userInfo:nil
+                                                         repeats:YES];
+            [[NSRunLoop currentRunLoop] addTimer:t forMode:NSDefaultRunLoopMode];
+            [[NSRunLoop currentRunLoop] run];
+        });
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -67,6 +68,20 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL) validateEmail: (NSString *) candidate {
+    NSString *emailRegex =
+    @"(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
+    @"~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
+    @"x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"
+    @"z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5"
+    @"]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"
+    @"9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"
+    @"-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES[c] %@", emailRegex];
+    
+    return [emailTest evaluateWithObject:candidate];
 }
 
 @end

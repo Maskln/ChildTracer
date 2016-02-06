@@ -27,6 +27,7 @@
 		41306D2B1C650CA600FF4A33 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		41306D2E1C650D0D00FF4A33 /* MailSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailSender.h; path = BackgroundTasks/MailSender.h; sourceTree = "<group>"; };
 		41306D2F1C650D0D00FF4A33 /* MailSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailSender.m; path = BackgroundTasks/MailSender.m; sourceTree = "<group>"; };
+		416CDC471C66A226001EEA27 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		41896B031C6003B3001D60F9 /* ChildTracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildTracer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41896B071C6003B3001D60F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41896B091C6003B3001D60F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		64DC65397AEC64C4E580A0FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				416CDC471C66A226001EEA27 /* CFNetwork.framework */,
 				41306D2B1C650CA600FF4A33 /* MessageUI.framework */,
 				B1C44A0EDFC6F4828CC52F90 /* libPods-ChildTracer.a */,
 			);

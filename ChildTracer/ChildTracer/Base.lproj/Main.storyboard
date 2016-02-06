@@ -120,11 +120,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="DKQ-fq-HMc">
-                                <rect key="frame" x="86" y="169" width="429" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="N7s-QQ-8Ch">
                                 <rect key="frame" x="86" y="169" width="429" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -177,6 +172,14 @@
                                     <action selector="sendMail:" destination="2UF-U4-LiI" eventType="touchUpInside" id="FFG-Gz-dUw"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="DKQ-fq-HMc">
+                                <rect key="frame" x="86" y="169" width="429" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="44" y="239" width="301" height="22"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -239,6 +242,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="mailField" destination="DKQ-fq-HMc" id="zeH-5f-4sh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Flg-Ad-TIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

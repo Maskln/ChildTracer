@@ -9,6 +9,8 @@
 #import "BatteryChecker.h"
 #import "StartUpViewController.h"
 #import "MailSender.h"
+#import "AppDelegate.h"
+
 
 @implementation BatteryChecker
 
@@ -25,13 +27,17 @@ int const MaxBatteryLevel = 100;
     double batLeft = (float) [myDevice batteryLevel] * 100;
     NSLog(@"%.f",batLeft);
     
+    AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    
     if (batLeft == -100) {
         NSLog(@"No Battery found");
+        MailSender *send = [[MailSender alloc] init];
+        [send sendEmailTo: appDelegate.emailAddress : @"Do you read me?"];
     }else if (batLeft >= MinBatteryLevel  && batLeft <= MaxBatteryLevel){
         NSLog(@"I've Got you!");
         MailSender *send = [[MailSender alloc] init];
-        [send sendEmailTo: @"lyubomir.nanev@gmail.com" : @"Do you read me?"];
-    } 
+        [send sendEmailTo: appDelegate.emailAddress : @"Do you read me?"];
+    }
     
     
 }

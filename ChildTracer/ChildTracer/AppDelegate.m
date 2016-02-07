@@ -12,10 +12,13 @@
 
 @interface AppDelegate ()
 
+
 @end
 
 @implementation AppDelegate
 
+//Refereshing interval in seconds
+int const RefreshInterval = 10;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -41,14 +44,12 @@
         bgTask = UIBackgroundTaskInvalid;
     }];
     
-    if ( [self validateEmail:self.emailAddress]) {
+    if ([self validateEmail:self.emailAddress]) {
         //and create new timer with async call:
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
-            int refreshInterval = 10;
-            
             //run function methodRunAfterBackground
-            NSTimer* t = [NSTimer scheduledTimerWithTimeInterval:refreshInterval
+            NSTimer* t = [NSTimer scheduledTimerWithTimeInterval:RefreshInterval
                                                           target:[BatteryChecker class]
                                                         selector:@selector(checkBatteryPercentage)
                                                         userInfo:nil

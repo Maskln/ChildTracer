@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic,strong) NSString *emailAddress;
+@property (nonatomic,strong) NSString *phoneNumber;
 
 @end
 

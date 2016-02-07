@@ -14,7 +14,8 @@
 @interface SetupViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *mailField;
-@property (weak, nonatomic) IBOutlet UITextField *pinCodeField;
+
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberField;
 
 @end
 
@@ -27,10 +28,9 @@
     self.mailField.returnKeyType = UIReturnKeyDone;
     [self.mailField setDelegate:self];
     [self textFieldShouldReturn:self.mailField];
-    self.pinCodeField.returnKeyType = UIReturnKeyDone;
-    [self.pinCodeField setDelegate:self];
-    [self textFieldShouldReturn:self.pinCodeField];
-    
+    self.phoneNumberField.returnKeyType = UIReturnKeyDone;
+    [self.phoneNumberField setDelegate:self];
+    [self textFieldShouldReturn:self.phoneNumberField];
 }
 
 
@@ -51,10 +51,13 @@
  }
  */
 
+
+//TODO: Rename to Trace
 - (IBAction)sendMail:(id)sender {
     
     AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     appDelegate.emailAddress = self.mailField.text;
+    appDelegate.phoneNumber = self.phoneNumberField.text;
 }
 
  //TODO: Extract helper class with methods for hiding keyboard

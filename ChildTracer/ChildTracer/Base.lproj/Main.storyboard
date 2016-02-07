@@ -120,11 +120,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="N7s-QQ-8Ch">
-                                <rect key="frame" x="86" y="169" width="429" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send to Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpP-y0-hPr">
                                 <rect key="frame" x="86" y="128" width="66" height="27"/>
                                 <constraints>
@@ -172,13 +167,18 @@
                                     <action selector="sendMail:" destination="2UF-U4-LiI" eventType="touchUpInside" id="FFG-Gz-dUw"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="DKQ-fq-HMc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="email@email.com" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="DKQ-fq-HMc">
                                 <rect key="frame" x="86" y="169" width="429" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="44" y="239" width="301" height="22"/>
                                 </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="359*********" textAlignment="natural" minimumFontSize="17" background="TextFieldBgImage" translatesAutoresizingMaskIntoConstraints="NO" id="N7s-QQ-8Ch">
+                                <rect key="frame" x="86" y="169" width="429" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -199,9 +199,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="N7s-QQ-8Ch"/>
                                 <exclude reference="qpP-y0-hPr"/>
                                 <exclude reference="96a-8K-29C"/>
+                                <exclude reference="N7s-QQ-8Ch"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Mh1-k3-bvI"/>
@@ -221,9 +221,9 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="N7s-QQ-8Ch"/>
                                 <include reference="qpP-y0-hPr"/>
                                 <include reference="96a-8K-29C"/>
+                                <include reference="N7s-QQ-8Ch"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Mh1-k3-bvI"/>
@@ -244,7 +244,7 @@
                     </view>
                     <connections>
                         <outlet property="mailField" destination="DKQ-fq-HMc" id="zeH-5f-4sh"/>
-                        <outlet property="pinCodeField" destination="N7s-QQ-8Ch" id="ITg-Ir-hBQ"/>
+                        <outlet property="phoneNumberField" destination="N7s-QQ-8Ch" id="qLQ-d7-ykz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Flg-Ad-TIv" userLabel="First Responder" sceneMemberID="firstResponder"/>

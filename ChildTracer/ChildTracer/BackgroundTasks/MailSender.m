@@ -34,9 +34,8 @@
     [sendMail setPass:@"12345678q123"]; // Password for the Gmail account that you are sending from
     [sendMail setSubject:@"Test"]; // Change this to change the subject of the email
     [sendMail setWantsSecure:YES]; // Gmail Requires this
-    [sendMail setDelegate:self]; // Required
-    
-    //NSString *message = @"Test";
+    [sendMail setDelegate:self]; // Required    
+   
     NSDictionary *plainPart = [NSDictionary dictionaryWithObjectsAndKeys:@"text/plain", kSKPSMTPPartContentTypeKey, andEmailMessage, kSKPSMTPPartMessageKey, @"8bit" , kSKPSMTPPartContentTransferEncodingKey, nil];
     
     [sendMail setParts:[NSArray arrayWithObjects:plainPart, nil]];

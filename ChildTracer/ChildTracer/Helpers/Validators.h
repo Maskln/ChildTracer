@@ -11,5 +11,6 @@
 @interface Validators : NSObject
 + (BOOL) validateEmail: (NSString *) candidate;
 + (BOOL) validatePhoneNumber: (NSString *) candidate;
++ (BOOL) validateBatteryLevel: (NSString *) candidate;
 
 @end

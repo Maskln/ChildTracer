@@ -11,14 +11,18 @@
 
 @implementation SmsSender
 
-NSString* const Key = @"4e8ae040";
-NSString* const Secret = @"5189d5eb";
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
 
 - (NSString *) sendSms:(NSString *)number : (NSString *) message {
-    
-    NSString* url = [NSString stringWithFormat: @"https://rest.nexmo.com/sms/json?api_key=%@&api_secret=%@&from=NEXMO&to=%@&text=%@", Key, Secret, number, message];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
- 
+    NSString* url = [NSString stringWithFormat: @"https://rest.nexmo.com/sms/json?api_key=4e8ae040&api_secret=5189d5eb&from=Child+Tracer&to=%@&text=%@", number, message];
+    NSLog(@"%@", url);
     [request setHTTPMethod:@"GET"];
     [request setURL:[NSURL URLWithString:url]];
     
@@ -28,7 +32,7 @@ NSString* const Secret = @"5189d5eb";
     NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
     
     if([responseCode statusCode] != 200){
-        NSLog(@"Error getting %@, HTTP status code %li", url, [responseCode statusCode]);
+        NSLog(@"Error getting %@, HTTP status code %d", url, [responseCode statusCode]);
         return nil;
     }
     

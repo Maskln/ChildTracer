@@ -32,5 +32,12 @@
     return [phoneTest evaluateWithObject:candidate];
 }
 
++ (BOOL) validateBatteryLevel: (NSString *) candidate {
+    NSString *phoneNumbRegex =
+    @"[0-9]{1,}";
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES[c] %@", phoneNumbRegex];
+    
+    return [phoneTest evaluateWithObject:candidate];
+}
 
 @end

@@ -15,8 +15,8 @@
 @interface SetupViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *mailField;
-
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberField;
+@property (weak, nonatomic) IBOutlet UITextField *batteryLevelField;
 
 @end
 
@@ -32,40 +32,36 @@
     self.phoneNumberField.returnKeyType = UIReturnKeyDone;
     [self.phoneNumberField setDelegate:self];
     [self textFieldShouldReturn:self.phoneNumberField];
-}
+    self.batteryLevelField.returnKeyType = UIReturnKeyDone;
+    [self.batteryLevelField setDelegate:self];
+    [self textFieldShouldReturn:self.batteryLevelField];
 
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
-
 //TODO: Rename to Trace
 - (IBAction)sendMail:(id)sender {
     
     AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     
-    if (![Validators validateEmail:self.mailField.text]) {
+    if (![Validators validateBatteryLevel: self.batteryLevelField.text]) {
+        if (((int)self.batteryLevelField.text < 1) || ((int)self.batteryLevelField.text > 100)) {
+            [self alertShow: @"Empty or Incorrect" : @"The Battery Level must be between 1 and 100!"];
+        }
+    }else if (![Validators validateEmail:self.mailField.text]) {
          [self alertShow: @"Empty or Incorrect" : @"The Email address is empty ot incorrect!"];
     } else if (![Validators validatePhoneNumber: self.phoneNumberField.text]) {
         [self alertShow: @"Empty or Incorrect" : @"The phone number must start with 359 and contains 12 digits!"];
     }
     
+    appDelegate.batteryLevel = self.batteryLevelField.text;
     appDelegate.emailAddress = self.mailField.text;
     appDelegate.phoneNumber = self.phoneNumberField.text;
+    
 }
 
  //TODO: Extract helper class with methods for hiding keyboard

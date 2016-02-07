@@ -19,6 +19,7 @@
 		41896B161C6003B3001D60F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41896B141C6003B3001D60F9 /* LaunchScreen.storyboard */; };
 		41896B201C6006A4001D60F9 /* StartUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41896B1F1C6006A4001D60F9 /* StartUpViewController.m */; };
 		41EF45D41C61418200E87CDE /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF45D31C61418200E87CDE /* SetupViewController.m */; };
+		41FCB76D1C67CA8E00807FD3 /* Validators.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FCB76C1C67CA8E00807FD3 /* Validators.m */; };
 		CDF67787A7EE8A72B280E8CA /* libPods-ChildTracer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C44A0EDFC6F4828CC52F90 /* libPods-ChildTracer.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,8 @@
 		41896B1F1C6006A4001D60F9 /* StartUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartUpViewController.m; sourceTree = "<group>"; };
 		41EF45D21C61418200E87CDE /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
 		41EF45D31C61418200E87CDE /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
+		41FCB76B1C67CA8E00807FD3 /* Validators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Validators.h; path = Helpers/Validators.h; sourceTree = "<group>"; };
+		41FCB76C1C67CA8E00807FD3 /* Validators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Validators.m; path = Helpers/Validators.m; sourceTree = "<group>"; };
 		B1C44A0EDFC6F4828CC52F90 /* libPods-ChildTracer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChildTracer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC2973A1D9AED88EFDFD4AF /* Pods-ChildTracer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChildTracer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChildTracer/Pods-ChildTracer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +102,7 @@
 		41896B051C6003B3001D60F9 /* ChildTracer */ = {
 			isa = PBXGroup;
 			children = (
+				41FCB76A1C67CA5600807FD3 /* Helpers */,
 				4140D9791C64CC12000052B2 /* BackgroundTasks */,
 				41896B1D1C60066D001D60F9 /* ViewControllers */,
 				41896B091C6003B3001D60F9 /* AppDelegate.h */,
@@ -129,6 +133,15 @@
 				41EF45D31C61418200E87CDE /* SetupViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		41FCB76A1C67CA5600807FD3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				41FCB76B1C67CA8E00807FD3 /* Validators.h */,
+				41FCB76C1C67CA8E00807FD3 /* Validators.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		511D6EAC553E79C9C13C419A /* Pods */ = {
@@ -278,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41EF45D41C61418200E87CDE /* SetupViewController.m in Sources */,
+				41FCB76D1C67CA8E00807FD3 /* Validators.m in Sources */,
 				416CDC4B1C66C945001EEA27 /* LocationManager.m in Sources */,
 				413DF6DB1C67764E003462A3 /* SmsSender.m in Sources */,
 				41896B201C6006A4001D60F9 /* StartUpViewController.m in Sources */,

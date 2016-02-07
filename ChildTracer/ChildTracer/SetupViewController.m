@@ -10,6 +10,7 @@
 #import "MailSender.h"
 #import "AppDelegate.h"
 #import "LocationManager.h"
+#import "Validators.h"
 
 @interface SetupViewController ()
 
@@ -56,6 +57,13 @@
 - (IBAction)sendMail:(id)sender {
     
     AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    
+    if (![Validators validateEmail:self.mailField.text]) {
+         [self alertShow: @"Empty or Incorrect" : @"The Email address is empty ot incorrect!"];
+    } else if (![Validators validatePhoneNumber: self.phoneNumberField.text]) {
+        [self alertShow: @"Empty or Incorrect" : @"The phone number must start with 359 and contains 12 digits!"];
+    }
+    
     appDelegate.emailAddress = self.mailField.text;
     appDelegate.phoneNumber = self.phoneNumberField.text;
 }
@@ -64,6 +72,15 @@
 -(void)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+}
+
+-(void)alertShow:(NSString*) title : (NSString*) message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

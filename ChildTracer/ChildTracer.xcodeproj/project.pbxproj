@@ -10,6 +10,7 @@
 		41306D2A1C64CEC400FF4A33 /* BatteryChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 41306D291C64CEC400FF4A33 /* BatteryChecker.m */; };
 		41306D2C1C650CA600FF4A33 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41306D2B1C650CA600FF4A33 /* MessageUI.framework */; };
 		41306D301C650D0D00FF4A33 /* MailSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 41306D2F1C650D0D00FF4A33 /* MailSender.m */; };
+		413DF6DB1C67764E003462A3 /* SmsSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DF6DA1C67764E003462A3 /* SmsSender.m */; };
 		416CDC4B1C66C945001EEA27 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 416CDC4A1C66C945001EEA27 /* LocationManager.m */; };
 		41896B081C6003B3001D60F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41896B071C6003B3001D60F9 /* main.m */; };
 		41896B0B1C6003B3001D60F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41896B0A1C6003B3001D60F9 /* AppDelegate.m */; };
@@ -28,6 +29,8 @@
 		41306D2B1C650CA600FF4A33 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		41306D2E1C650D0D00FF4A33 /* MailSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MailSender.h; path = BackgroundTasks/MailSender.h; sourceTree = "<group>"; };
 		41306D2F1C650D0D00FF4A33 /* MailSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MailSender.m; path = BackgroundTasks/MailSender.m; sourceTree = "<group>"; };
+		413DF6D91C67764E003462A3 /* SmsSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmsSender.h; path = BackgroundTasks/SmsSender.h; sourceTree = "<group>"; };
+		413DF6DA1C67764E003462A3 /* SmsSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmsSender.m; path = BackgroundTasks/SmsSender.m; sourceTree = "<group>"; };
 		416CDC471C66A226001EEA27 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		416CDC491C66C945001EEA27 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationManager.h; path = BackgroundTasks/LocationManager.h; sourceTree = "<group>"; };
 		416CDC4A1C66C945001EEA27 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationManager.m; path = BackgroundTasks/LocationManager.m; sourceTree = "<group>"; };
@@ -69,6 +72,8 @@
 				41306D2F1C650D0D00FF4A33 /* MailSender.m */,
 				416CDC491C66C945001EEA27 /* LocationManager.h */,
 				416CDC4A1C66C945001EEA27 /* LocationManager.m */,
+				413DF6D91C67764E003462A3 /* SmsSender.h */,
+				413DF6DA1C67764E003462A3 /* SmsSender.m */,
 			);
 			name = BackgroundTasks;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			files = (
 				41EF45D41C61418200E87CDE /* SetupViewController.m in Sources */,
 				416CDC4B1C66C945001EEA27 /* LocationManager.m in Sources */,
+				413DF6DB1C67764E003462A3 /* SmsSender.m in Sources */,
 				41896B201C6006A4001D60F9 /* StartUpViewController.m in Sources */,
 				41896B0B1C6003B3001D60F9 /* AppDelegate.m in Sources */,
 				41306D301C650D0D00FF4A33 /* MailSender.m in Sources */,

@@ -9,10 +9,12 @@
 #import "SetupViewController.h"
 #import "MailSender.h"
 #import "AppDelegate.h"
+#import "LocationManager.h"
 
 @interface SetupViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *mailField;
 
+@property LocationManager *locationCoordinates;
 @end
 
 @implementation SetupViewController
@@ -20,7 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    self.locationCoordinates = [[LocationManager alloc] init];    
+    [self.locationCoordinates loadLocation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,12 +48,13 @@
     AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     appDelegate.emailAddress = self.mailField.text;
     
+    double latitude = self.locationCoordinates.locationManager.location.coordinate.latitude;
+    double longitude = self.locationCoordinates.locationManager.location.coordinate.longitude;
     
+    NSLog(@"This is: %f and %f", latitude, longitude);
+    NSLog(@"%@", self.locationCoordinates.deviceLocation);
     
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    [theTextField resignFirstResponder];
-    return YES;
-}
+
 @end

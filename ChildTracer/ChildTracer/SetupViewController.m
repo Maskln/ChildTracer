@@ -11,19 +11,22 @@
 #import "AppDelegate.h"
 #import "LocationManager.h"
 
-@interface SetupViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *mailField;
+@interface SetupViewController () 
 
-@property LocationManager *locationCoordinates;
+@property (weak, nonatomic) IBOutlet UITextField *mailField;
+//@property LocationManager *locationCoordinates;
 @end
 
 @implementation SetupViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mailField.returnKeyType = UIReturnKeyDone;
+    [self.mailField setDelegate:self];
 
-    self.locationCoordinates = [[LocationManager alloc] init];    
-    [self.locationCoordinates loadLocation];
+//    self.locationCoordinates = [[LocationManager alloc] init];    
+//    [self.locationCoordinates loadLocation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,13 +50,18 @@
     
     AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     appDelegate.emailAddress = self.mailField.text;
-    
-    double latitude = self.locationCoordinates.locationManager.location.coordinate.latitude;
-    double longitude = self.locationCoordinates.locationManager.location.coordinate.longitude;
-    
-    NSLog(@"This is: %f and %f", latitude, longitude);
-    NSLog(@"%@", self.locationCoordinates.deviceLocation);
-    
+//    
+//    double latitude = self.locationCoordinates.locationManager.location.coordinate.latitude;
+//    double longitude = self.locationCoordinates.locationManager.location.coordinate.longitude;
+//    
+//    NSLog(@"This is: %f and %f", latitude, longitude);
+//    NSLog(@"%@", self.locationCoordinates.deviceLocation);
+//    
+}
+
+-(void)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
 }
 
 

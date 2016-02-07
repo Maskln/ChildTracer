@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetupViewController : UIViewController
+@interface SetupViewController : UIViewController <UITextFieldDelegate>
 
 - (IBAction)sendMail:(id)sender;
 

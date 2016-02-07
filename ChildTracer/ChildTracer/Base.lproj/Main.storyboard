@@ -244,6 +244,7 @@
                     </view>
                     <connections>
                         <outlet property="mailField" destination="DKQ-fq-HMc" id="zeH-5f-4sh"/>
+                        <outlet property="pinCodeField" destination="N7s-QQ-8Ch" id="ITg-Ir-hBQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Flg-Ad-TIv" userLabel="First Responder" sceneMemberID="firstResponder"/>

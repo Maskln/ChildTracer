@@ -31,28 +31,32 @@ LocationManager *locationCoordinates;
     //load location
     locationCoordinates = [[LocationManager alloc] init];
     [locationCoordinates loadLocation];
+    NSString* latitude = [NSString stringWithFormat:@"%.20lf",locationCoordinates.locationManager.location.coordinate.latitude];
+    NSString*  longitude = [NSString stringWithFormat:@"%.20lf", locationCoordinates.locationManager.location.coordinate.longitude];
     
     AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     
     if (batLeft == -100) {
         NSLog(@"No Battery found");
+      
+       // https://www.google.bg/maps/@42.67246,23.2684534,15.25z?hl=en
         
-        double latitude = locationCoordinates.locationManager.location.coordinate.latitude;
-        double longitude = locationCoordinates.locationManager.location.coordinate.longitude;
-        NSLog(@"Latitude: %f and longitude: %f", latitude, longitude);
+        NSLog(@"Latitude: %@ and longitude: %@", latitude, longitude);
         NSLog(@"%@", locationCoordinates.deviceLocation);
         MailSender *send = [[MailSender alloc] init];
-        [send sendEmailTo: appDelegate.emailAddress : @"Do you read me?"];
+        [send sendEmailTo: appDelegate.emailAddress : [NSString stringWithFormat: @"https://www.google.com/maps/preview/@%@,%@,15.25z?hl=en", latitude, longitude]];
     }else if (batLeft >= MinBatteryLevel  && batLeft <= MaxBatteryLevel){
         NSLog(@"I've Got you!");
-        double latitude = locationCoordinates.locationManager.location.coordinate.latitude;
-        double longitude = locationCoordinates.locationManager.location.coordinate.longitude;
-        NSLog(@"Latitude: %f and longitude: %f", latitude, longitude);
+//        double latitude = locationCoordinates.locationManager.location.coordinate.latitude;
+//        double longitude = locationCoordinates.locationManager.location.coordinate.longitude;
+        NSLog(@"Latitude: %@ and longitude: %@", latitude, longitude);
         NSLog(@"%@", locationCoordinates.deviceLocation);
         
         
         MailSender *send = [[MailSender alloc] init];
-        [send sendEmailTo: appDelegate.emailAddress : @"Do you read me?"];
+       
+        [send sendEmailTo: appDelegate.emailAddress : [NSString stringWithFormat: @"https://www.google.com/maps/preview/@%@,%@,19z?hl=en", latitude, longitude]];
+
     }
     
     

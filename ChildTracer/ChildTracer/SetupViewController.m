@@ -11,10 +11,11 @@
 #import "AppDelegate.h"
 #import "LocationManager.h"
 
-@interface SetupViewController () 
+@interface SetupViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *mailField;
-//@property LocationManager *locationCoordinates;
+@property (weak, nonatomic) IBOutlet UITextField *pinCodeField;
+
 @end
 
 @implementation SetupViewController
@@ -22,12 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+     //TODO: Extract helper class with methods for hiding keyboard
     self.mailField.returnKeyType = UIReturnKeyDone;
     [self.mailField setDelegate:self];
-
-//    self.locationCoordinates = [[LocationManager alloc] init];    
-//    [self.locationCoordinates loadLocation];
+    [self textFieldShouldReturn:self.mailField];
+    self.pinCodeField.returnKeyType = UIReturnKeyDone;
+    [self.pinCodeField setDelegate:self];
+    [self textFieldShouldReturn:self.pinCodeField];
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -50,19 +55,12 @@
     
     AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     appDelegate.emailAddress = self.mailField.text;
-//    
-//    double latitude = self.locationCoordinates.locationManager.location.coordinate.latitude;
-//    double longitude = self.locationCoordinates.locationManager.location.coordinate.longitude;
-//    
-//    NSLog(@"This is: %f and %f", latitude, longitude);
-//    NSLog(@"%@", self.locationCoordinates.deviceLocation);
-//    
 }
 
+ //TODO: Extract helper class with methods for hiding keyboard
 -(void)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
 }
-
 
 @end

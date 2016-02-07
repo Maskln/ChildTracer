@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StartUpViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@interface StartUpViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *inputPinCode;
 

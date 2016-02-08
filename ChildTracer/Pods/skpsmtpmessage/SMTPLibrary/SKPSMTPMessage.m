@@ -60,7 +60,7 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
 @implementation SKPSMTPMessage
 
 @synthesize login, pass, relayHost, relayPorts, subject, fromEmail, toEmail, parts, requiresAuth, inputString, wantsSecure, \
-            delegate, connectTimer, connectTimeout, watchdogTimer, validateSSLChain;
+delegate, connectTimer, connectTimeout, watchdogTimer, validateSSLChain;
 @synthesize ccEmail;
 @synthesize bccEmail;
 
@@ -82,7 +82,7 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
         self.relayPorts = defaultPorts;
         
         // setup a default timeout (8 seconds)
-        connectTimeout = 8.0; 
+        connectTimeout = 8.0;
         
         // by default, validate the SSL chain
         validateSSLChain = YES;
@@ -100,8 +100,8 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
     self.subject = nil;
     self.fromEmail = nil;
     self.toEmail = nil;
-	self.ccEmail = nil;
-	self.bccEmail = nil;
+    self.ccEmail = nil;
+    self.bccEmail = nil;
     self.parts = nil;
     self.inputString = nil;
     
@@ -171,8 +171,8 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
     // No hard error if we're wating on a reply
     if (sendState != kSKPSMTPWaitingQuitReply)
     {
-        NSError *error = [NSError errorWithDomain:@"SKPSMTPMessageError" 
-                                             code:kSKPSMPTErrorConnectionTimeout 
+        NSError *error = [NSError errorWithDomain:@"SKPSMTPMessageError"
+                                             code:kSKPSMPTErrorConnectionTimeout
                                          userInfo:[NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Timeout sending message.", @"server timeout fail error description"),NSLocalizedDescriptionKey,
                                                    NSLocalizedString(@"Try sending your message again later.", @"server generic error recovery"),NSLocalizedRecoverySuggestionErrorKey,nil]];
         [delegate messageFailed:self error:error];
@@ -255,9 +255,9 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
     
     if (![relayPorts count])
     {
-        [delegate messageFailed:self 
-                          error:[NSError errorWithDomain:@"SKPSMTPMessageError" 
-                                                    code:kSKPSMTPErrorConnectionFailed 
+        [delegate messageFailed:self
+                          error:[NSError errorWithDomain:@"SKPSMTPMessageError"
+                                                    code:kSKPSMTPErrorConnectionFailed
                                                 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Unable to connect to the server.", @"server connection fail error description"),NSLocalizedDescriptionKey,
                                                           NSLocalizedString(@"Try sending your message again later.", @"server generic error recovery"),NSLocalizedRecoverySuggestionErrorKey,nil]]];
         
@@ -275,7 +275,7 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
     self.connectTimer = [NSTimer scheduledTimerWithTimeInterval:connectTimeout
                                                          target:self
                                                        selector:@selector(connectionConnectedCheck:)
-                                                       userInfo:nil 
+                                                       userInfo:nil
                                                         repeats:NO];
     
     [NSStream getStreamsToHostNamed:relayHost port:relayPort inputStream:&inputStream outputStream:&outputStream];
@@ -308,9 +308,9 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
         [self.connectTimer invalidate];
         self.connectTimer = nil;
         
-        [delegate messageFailed:self 
-                          error:[NSError errorWithDomain:@"SKPSMTPMessageError" 
-                                                    code:kSKPSMTPErrorConnectionFailed 
+        [delegate messageFailed:self
+                          error:[NSError errorWithDomain:@"SKPSMTPMessageError"
+                                                    code:kSKPSMTPErrorConnectionFailed
                                                 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Unable to connect to the server.", @"server connection fail error description"),NSLocalizedDescriptionKey,
                                                           NSLocalizedString(@"Try sending your message again later.", @"server generic error recovery"),NSLocalizedRecoverySuggestionErrorKey,nil]]];
         
@@ -321,9 +321,9 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
 #pragma mark -
 #pragma mark <NSStreamDelegate>
 
-- (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode 
+- (void)stream:(NSStream *)stream handleEvent:(NSStreamEvent)eventCode
 {
-    switch(eventCode) 
+    switch(eventCode)
     {
         case NSStreamEventHasBytesAvailable:
         {
@@ -331,7 +331,7 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
             memset(buf, 0, sizeof(uint8_t) * 1024);
             unsigned int len = 0;
             len = [(NSInputStream *)stream read:buf maxLength:1024];
-            if(len) 
+            if(len)
             {
                 NSString *tmpStr = [[NSString alloc] initWithBytes:buf length:len encoding:NSUTF8StringEncoding];
                 [inputString appendString:tmpStr];
@@ -352,55 +352,55 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
             
             if (sendState != kSKPSMTPMessageSent)
             {
-                [delegate messageFailed:self 
-                                  error:[NSError errorWithDomain:@"SKPSMTPMessageError" 
-                                                            code:kSKPSMTPErrorConnectionInterrupted 
+                [delegate messageFailed:self
+                                  error:[NSError errorWithDomain:@"SKPSMTPMessageError"
+                                                            code:kSKPSMTPErrorConnectionInterrupted
                                                         userInfo:[NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"The connection to the server was interrupted.", @"server connection interrupted error description"),NSLocalizedDescriptionKey,
                                                                   NSLocalizedString(@"Try sending your message again later.", @"server generic error recovery"),NSLocalizedRecoverySuggestionErrorKey,nil]]];
-
+                
             }
             
             break;
         }
     }
 }
-            
+
 
 - (NSString *)formatAnAddress:(NSString *)address {
-	NSString		*formattedAddress;
-	NSCharacterSet	*whitespaceCharSet = [NSCharacterSet whitespaceCharacterSet];
-
-	if (([address rangeOfString:@"<"].location == NSNotFound) && ([address rangeOfString:@">"].location == NSNotFound)) {
-		formattedAddress = [NSString stringWithFormat:@"RCPT TO:<%@>\r\n", [address stringByTrimmingCharactersInSet:whitespaceCharSet]];									
-	}
-	else {
-		formattedAddress = [NSString stringWithFormat:@"RCPT TO:%@\r\n", [address stringByTrimmingCharactersInSet:whitespaceCharSet]];																		
-	}
-	
-	return(formattedAddress);
+    NSString		*formattedAddress;
+    NSCharacterSet	*whitespaceCharSet = [NSCharacterSet whitespaceCharacterSet];
+    
+    if (([address rangeOfString:@"<"].location == NSNotFound) && ([address rangeOfString:@">"].location == NSNotFound)) {
+        formattedAddress = [NSString stringWithFormat:@"RCPT TO:<%@>\r\n", [address stringByTrimmingCharactersInSet:whitespaceCharSet]];
+    }
+    else {
+        formattedAddress = [NSString stringWithFormat:@"RCPT TO:%@\r\n", [address stringByTrimmingCharactersInSet:whitespaceCharSet]];
+    }
+    
+    return(formattedAddress);
 }
 
 - (NSString *)formatAddresses:(NSString *)addresses {
-	NSCharacterSet	*splitSet = [NSCharacterSet characterSetWithCharactersInString:@";,"];
-	NSMutableString	*multipleRcptTo = [NSMutableString string];
-	
-	if ((addresses != nil) && (![addresses isEqualToString:@""])) {
-		if( [addresses rangeOfString:@";"].location != NSNotFound || [addresses rangeOfString:@","].location != NSNotFound ) {
-			NSArray *addressParts = [addresses componentsSeparatedByCharactersInSet:splitSet];
-						
-			for( NSString *address in addressParts ) {
-				[multipleRcptTo appendString:[self formatAnAddress:address]];
-			}
-		}
-		else {
-			[multipleRcptTo appendString:[self formatAnAddress:addresses]];
-		}		
-	}
-	
-	return(multipleRcptTo);
+    NSCharacterSet	*splitSet = [NSCharacterSet characterSetWithCharactersInString:@";,"];
+    NSMutableString	*multipleRcptTo = [NSMutableString string];
+    
+    if ((addresses != nil) && (![addresses isEqualToString:@""])) {
+        if( [addresses rangeOfString:@";"].location != NSNotFound || [addresses rangeOfString:@","].location != NSNotFound ) {
+            NSArray *addressParts = [addresses componentsSeparatedByCharactersInSet:splitSet];
+            
+            for( NSString *address in addressParts ) {
+                [multipleRcptTo appendString:[self formatAnAddress:address]];
+            }
+        }
+        else {
+            [multipleRcptTo appendString:[self formatAnAddress:addresses]];
+        }
+    }
+    
+    return(multipleRcptTo);
 }
 
-            
+
 - (void)parseBuffer
 {
     // Pull out the next line
@@ -532,14 +532,14 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
                             }
                             else
                             {
-                                error = [NSError errorWithDomain:@"SKPSMTPMessageError" 
+                                error = [NSError errorWithDomain:@"SKPSMTPMessageError"
                                                             code:kSKPSMTPErrorUnsupportedLogin
                                                         userInfo:[NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Unsupported login mechanism.", @"server unsupported login fail error description"),NSLocalizedDescriptionKey,
                                                                   NSLocalizedString(@"Your server's security setup is not supported, please contact your system administrator or use a supported email account like MobileMe.", @"server security fail error recovery"),NSLocalizedRecoverySuggestionErrorKey,nil]];
-                                         
+                                
                                 encounteredError = YES;
                             }
-                                
+                            
                         }
                         else
                         {
@@ -608,18 +608,18 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
                         }
                         
                         /*
-                        else
-                        {
-                            error = [NSError errorWithDomain:@"SKPSMTPMessageError" 
-                                                        code:kSKPSMTPErrorTLSFail
-                                                    userInfo:[NSDictionary dictionaryWithObject:@"Unable to start TLS" 
-                                                                                         forKey:NSLocalizedDescriptionKey]];
-                            encounteredError = YES;
-                        }
-                        */
+                         else
+                         {
+                         error = [NSError errorWithDomain:@"SKPSMTPMessageError"
+                         code:kSKPSMTPErrorTLSFail
+                         userInfo:[NSDictionary dictionaryWithObject:@"Unable to start TLS"
+                         forKey:NSLocalizedDescriptionKey]];
+                         encounteredError = YES;
+                         }
+                         */
                     }
                 }
-                
+                    
                 case kSKPSMTPWaitingLOGINUsernameReply:
                 {
                     if ([tmpLine hasPrefix:@"334 VXNlcm5hbWU6"])
@@ -661,7 +661,7 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
                     }
                     break;
                 }
-                
+                    
                 case kSKPSMTPWaitingAuthSuccess:
                 {
                     if ([tmpLine hasPrefix:@"235 "])
@@ -682,28 +682,28 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
                     }
                     else if ([tmpLine hasPrefix:@"535 "])
                     {
-                        error =[NSError errorWithDomain:@"SKPSMTPMessageError" 
-                                                   code:kSKPSMTPErrorInvalidUserPass 
+                        error =[NSError errorWithDomain:@"SKPSMTPMessageError"
+                                                   code:kSKPSMTPErrorInvalidUserPass
                                                userInfo:[NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Invalid username or password.", @"server login fail error description"),NSLocalizedDescriptionKey,
                                                          NSLocalizedString(@"Go to Email Preferences in the application and re-enter your username and password.", @"server login error recovery"),NSLocalizedRecoverySuggestionErrorKey,nil]];
                         encounteredError = YES;
                     }
                     break;
                 }
-                
+                    
                 case kSKPSMTPWaitingFromReply:
                 {
-					// toc 2009-02-18 begin changes per mdesaro issue 18 - http://code.google.com/p/skpsmtpmessage/issues/detail?id=18
-					// toc 2009-02-18 begin changes to support cc & bcc
-					
+                    // toc 2009-02-18 begin changes per mdesaro issue 18 - http://code.google.com/p/skpsmtpmessage/issues/detail?id=18
+                    // toc 2009-02-18 begin changes to support cc & bcc
+                    
                     if ([tmpLine hasPrefix:@"250 "]) {
                         sendState = kSKPSMTPWaitingToReply;
                         
-						NSMutableString	*multipleRcptTo = [NSMutableString string];
-						[multipleRcptTo appendString:[self formatAddresses:toEmail]];
-						[multipleRcptTo appendString:[self formatAddresses:ccEmail]];
-						[multipleRcptTo appendString:[self formatAddresses:bccEmail]];
-																		
+                        NSMutableString	*multipleRcptTo = [NSMutableString string];
+                        [multipleRcptTo appendString:[self formatAddresses:toEmail]];
+                        [multipleRcptTo appendString:[self formatAddresses:ccEmail]];
+                        [multipleRcptTo appendString:[self formatAddresses:bccEmail]];
+                        
                         NSLog(@"C: %@", multipleRcptTo);
                         if (CFWriteStreamWriteFully((CFWriteStreamRef)outputStream, (const uint8_t *)[multipleRcptTo UTF8String], [multipleRcptTo lengthOfBytesUsingEncoding:NSUTF8StringEncoding]) < 0)
                         {
@@ -737,16 +737,16 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
                     }
                     else if ([tmpLine hasPrefix:@"530 "])
                     {
-                        error =[NSError errorWithDomain:@"SKPSMTPMessageError" 
-                                                   code:kSKPSMTPErrorNoRelay 
+                        error =[NSError errorWithDomain:@"SKPSMTPMessageError"
+                                                   code:kSKPSMTPErrorNoRelay
                                                userInfo:[NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Relay rejected.", @"server relay fail error description"),NSLocalizedDescriptionKey,
-                                                        NSLocalizedString(@"Your server probably requires a username and password.", @"server relay fail error recovery"),NSLocalizedRecoverySuggestionErrorKey,nil]];
+                                                         NSLocalizedString(@"Your server probably requires a username and password.", @"server relay fail error recovery"),NSLocalizedRecoverySuggestionErrorKey,nil]];
                         encounteredError = YES;
                     }
                     else if ([tmpLine hasPrefix:@"550 "])
                     {
-                        error =[NSError errorWithDomain:@"SKPSMTPMessageError" 
-                                                   code:kSKPSMTPErrorInvalidMessage 
+                        error =[NSError errorWithDomain:@"SKPSMTPMessageError"
+                                                   code:kSKPSMTPErrorInvalidMessage
                                                userInfo:[NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"To address rejected.", @"server to address fail error description"),NSLocalizedDescriptionKey,
                                                          NSLocalizedString(@"Please re-enter the To: address.", @"server to address fail error recovery"),NSLocalizedRecoverySuggestionErrorKey,nil]];
                         encounteredError = YES;
@@ -787,8 +787,8 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
                     }
                     else if ([tmpLine hasPrefix:@"550 "])
                     {
-                        error =[NSError errorWithDomain:@"SKPSMTPMessageError" 
-                                                   code:kSKPSMTPErrorInvalidMessage 
+                        error =[NSError errorWithDomain:@"SKPSMTPMessageError"
+                                                   code:kSKPSMTPErrorInvalidMessage
                                                userInfo:[NSDictionary dictionaryWithObjectsAndKeys:NSLocalizedString(@"Failed to logout.", @"server logout fail error description"),NSLocalizedDescriptionKey,
                                                          NSLocalizedString(@"Try sending your message again later.", @"server generic error recovery"),NSLocalizedRecoverySuggestionErrorKey,nil]];
                         encounteredError = YES;
@@ -817,17 +817,8 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
     {
         [self cleanUpStreams];
         
-        @try {
-            [delegate messageSent:self];
-            
-        }
-        @catch (NSException * e) {
-            return;
-        }
-        @finally {
-            return;
-        }
-       
+        [delegate messageSent:self];
+        
     }
     else if (encounteredError)
     {
@@ -842,34 +833,34 @@ NSString *kSKPSMTPPartContentTransferEncodingKey = @"kSKPSMTPPartContentTransfer
     NSMutableString *message = [[NSMutableString alloc] init];
     static NSString *separatorString = @"--SKPSMTPMessage--Separator--Delimiter\r\n";
     
-	CFUUIDRef	uuidRef   = CFUUIDCreate(kCFAllocatorDefault);
-	NSString	*uuid     = (NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuidRef);
-	CFRelease(uuidRef);
+    CFUUIDRef	uuidRef   = CFUUIDCreate(kCFAllocatorDefault);
+    NSString	*uuid     = (NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuidRef);
+    CFRelease(uuidRef);
     
     NSDate *now = [[NSDate alloc] init];
-	NSDateFormatter	*dateFormatter = [[NSDateFormatter alloc] init];
-	
-	[dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
-	
-	[message appendFormat:@"Date: %@\r\n", [dateFormatter stringFromDate:now]];
-	[message appendFormat:@"Message-id: <%@@%@>\r\n", [(NSString *)uuid stringByReplacingOccurrencesOfString:@"-" withString:@""], self.relayHost];
-	
+    NSDateFormatter	*dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss Z"];
+    
+    [message appendFormat:@"Date: %@\r\n", [dateFormatter stringFromDate:now]];
+    [message appendFormat:@"Message-id: <%@@%@>\r\n", [(NSString *)uuid stringByReplacingOccurrencesOfString:@"-" withString:@""], self.relayHost];
+    
     [now release];
     [dateFormatter release];
     [uuid release];
     
     [message appendFormat:@"From:%@\r\n", fromEmail];
-	
     
-	if ((self.toEmail != nil) && (![self.toEmail isEqualToString:@""])) 
+    
+    if ((self.toEmail != nil) && (![self.toEmail isEqualToString:@""]))
     {
-		[message appendFormat:@"To:%@\r\n", self.toEmail];		
-	}
-
-	if ((self.ccEmail != nil) && (![self.ccEmail isEqualToString:@""])) 
+        [message appendFormat:@"To:%@\r\n", self.toEmail];
+    }
+    
+    if ((self.ccEmail != nil) && (![self.ccEmail isEqualToString:@""]))
     {
-		[message appendFormat:@"Cc:%@\r\n", self.ccEmail];		
-	}
+        [message appendFormat:@"Cc:%@\r\n", self.ccEmail];
+    }
     
     [message appendString:@"Content-Type: multipart/mixed; boundary=SKPSMTPMessage--Separator--Delimiter\r\n"];
     [message appendString:@"Mime-Version: 1.0 (SKPSMTPMessage 1.0)\r\n"];

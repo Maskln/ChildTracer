@@ -10,6 +10,7 @@
 
 
 @implementation SmsSender
+
 - (NSString *) sendSms:(NSString *)number : (NSString *) message {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     NSString* url = [NSString stringWithFormat: @"https://rest.nexmo.com/sms/json?api_key=4e8ae040&api_secret=5189d5eb&from=NEXMO&to=%@&text=%@", number, message];

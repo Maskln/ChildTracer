@@ -55,6 +55,7 @@ LocationManager *locationCoordinates;
         SmsSender* smsSend = [[SmsSender alloc] init];
         [smsSend sendSms: phoneNumb: smsMessage];
     }else if (batLeft >= minBatteryLevel  && batLeft <= maxBatteryLevel){
+        
         NSLog(@"Latitude: %@ and longitude: %@", latitude, longitude);
         NSLog(@"%@", locationCoordinates.deviceLocation);
         
@@ -63,8 +64,7 @@ LocationManager *locationCoordinates;
         [smsSend sendSms:phoneNumb :smsMessage];
         
         MailSender *send = [[MailSender alloc] init];
-        [send sendEmailTo: appDelegate.emailAddress : [NSString stringWithFormat: @"https://www.google.com/maps/preview/@%@,%@,19z?hl=en", latitude, longitude]];
-        
+        [send sendEmailTo: appDelegate.emailAddress : [NSString stringWithFormat: @"https://www.google.com/maps/preview/@%@,%@,19z?hl=en", latitude, longitude]];        
     }    
 }
 

@@ -32,7 +32,7 @@
     [sendMail setRequiresAuth:YES];
     [sendMail setLogin:@"pesho.the.great"];
     [sendMail setPass:@"12345678q123"];
-    [sendMail setSubject:@"Test"];
+    [sendMail setSubject:@"ChildTracer"];
     [sendMail setWantsSecure:YES];
     [sendMail setDelegate:self];
    

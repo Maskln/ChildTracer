@@ -122,13 +122,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChildTracer/BackgroundTasks/BatteryChecker.m"
-            timestampString = "476569131.654423"
+            timestampString = "476575963.689486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "+checkBatteryPercentage"
-            landmarkType = "5">
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "@implementation BatteryChecker"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,13 +138,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChildTracer/BackgroundTasks/BatteryChecker.m"
-            timestampString = "476569131.654423"
+            timestampString = "476575963.689486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "+checkBatteryPercentage"
-            landmarkType = "5">
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "@implementation BatteryChecker"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChildTracer/BackgroundTasks/SmsSender.m"
-            timestampString = "476569722.79673"
+            timestampString = "476595049.546263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "-sendSms::"
             landmarkType = "5">
          </BreakpointContent>
@@ -361,12 +361,12 @@
                   moduleName = "ChildTracer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mask/Documents/Projects/ChildTracer/ChildTracer/ChildTracer/BackgroundTasks/BatteryChecker.m"
-                  timestampString = "476570776.438832"
+                  timestampString = "476593166.587809"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "58"
                   endingLineNumber = "58"
-                  offsetFromSymbolStart = "1698">
+                  offsetFromSymbolStart = "1662">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -376,12 +376,12 @@
                   moduleName = "ChildTracer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mask/Documents/Projects/ChildTracer/ChildTracer/ChildTracer/BackgroundTasks/BatteryChecker.m"
-                  timestampString = "476570776.439323"
+                  timestampString = "476593166.588359"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "58"
                   endingLineNumber = "58"
-                  offsetFromSymbolStart = "1702">
+                  offsetFromSymbolStart = "1684">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -409,11 +409,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChildTracer/BackgroundTasks/SmsSender.m"
-            timestampString = "476570230.475435"
+            timestampString = "476595049.546263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "-sendSms::"
             landmarkType = "5">
          </BreakpointContent>
@@ -431,6 +431,38 @@
             startingLineNumber = "65"
             endingLineNumber = "65"
             landmarkName = "+checkBatteryPercentage"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChildTracer/AppDelegate.m"
+            timestampString = "476576734.448497"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-applicationDidEnterBackground:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChildTracer/DataController.m"
+            timestampString = "476590440.889393"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-initializeCoreData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

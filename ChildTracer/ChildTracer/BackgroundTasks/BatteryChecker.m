@@ -44,7 +44,6 @@ LocationManager *locationCoordinates;
     
     if (batLeft == -100) {
         NSLog(@"No Battery found");
-        
         NSLog(@"Latitude: %@ and longitude: %@", latitude, longitude);
         NSLog(@"%@", locationCoordinates.deviceLocation);
         
@@ -52,22 +51,20 @@ LocationManager *locationCoordinates;
         MailSender *send = [[MailSender alloc] init];
         [send sendEmailTo: appDelegate.emailAddress : [NSString stringWithFormat: @"https://www.google.com/maps/preview/@%@,%@,19z?hl=en", latitude, longitude]];
         
-            //Sms Sender works!
-        //SmsSender* smsSend = [[SmsSender alloc] init];
-        //[smsSend sendSms: phoneNumb: smsMessage];
+        //Sms Sender
+        SmsSender* smsSend = [[SmsSender alloc] init];
+        [smsSend sendSms: phoneNumb: smsMessage];
     }else if (batLeft >= minBatteryLevel  && batLeft <= maxBatteryLevel){
-        NSLog(@"I've Got you!");
         NSLog(@"Latitude: %@ and longitude: %@", latitude, longitude);
         NSLog(@"%@", locationCoordinates.deviceLocation);
         
-        //Sms Sender works!
-       // SmsSender* smsSend = [[SmsSender alloc] init];
-       // [smsSend sendSms:phoneNumb :smsMessage];
+        //Sms Sender
+        SmsSender* smsSend = [[SmsSender alloc] init];
+        [smsSend sendSms:phoneNumb :smsMessage];
         
         MailSender *send = [[MailSender alloc] init];
         [send sendEmailTo: appDelegate.emailAddress : [NSString stringWithFormat: @"https://www.google.com/maps/preview/@%@,%@,19z?hl=en", latitude, longitude]];
         
-      
     }
     
 }

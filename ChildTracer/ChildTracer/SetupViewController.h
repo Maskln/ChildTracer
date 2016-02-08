@@ -10,6 +10,6 @@
 
 @interface SetupViewController : UIViewController <UITextFieldDelegate>
 
-- (IBAction)sendMail:(id)sender;
+- (IBAction)trace:(id)sender;
 
 @end

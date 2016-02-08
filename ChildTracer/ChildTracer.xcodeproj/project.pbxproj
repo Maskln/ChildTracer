@@ -20,6 +20,7 @@
 		41896B201C6006A4001D60F9 /* StartUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41896B1F1C6006A4001D60F9 /* StartUpViewController.m */; };
 		41EF45D41C61418200E87CDE /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF45D31C61418200E87CDE /* SetupViewController.m */; };
 		41FCB76D1C67CA8E00807FD3 /* Validators.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FCB76C1C67CA8E00807FD3 /* Validators.m */; };
+		41FCB7701C68047600807FD3 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FCB76F1C68047600807FD3 /* AboutViewController.m */; };
 		CDF67787A7EE8A72B280E8CA /* libPods-ChildTracer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C44A0EDFC6F4828CC52F90 /* libPods-ChildTracer.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		41EF45D31C61418200E87CDE /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
 		41FCB76B1C67CA8E00807FD3 /* Validators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Validators.h; path = Helpers/Validators.h; sourceTree = "<group>"; };
 		41FCB76C1C67CA8E00807FD3 /* Validators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Validators.m; path = Helpers/Validators.m; sourceTree = "<group>"; };
+		41FCB76E1C68047600807FD3 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		41FCB76F1C68047600807FD3 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B1C44A0EDFC6F4828CC52F90 /* libPods-ChildTracer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChildTracer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC2973A1D9AED88EFDFD4AF /* Pods-ChildTracer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChildTracer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChildTracer/Pods-ChildTracer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +134,8 @@
 				41896B1F1C6006A4001D60F9 /* StartUpViewController.m */,
 				41EF45D21C61418200E87CDE /* SetupViewController.h */,
 				41EF45D31C61418200E87CDE /* SetupViewController.m */,
+				41FCB76E1C68047600807FD3 /* AboutViewController.h */,
+				41FCB76F1C68047600807FD3 /* AboutViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				413DF6DB1C67764E003462A3 /* SmsSender.m in Sources */,
 				41896B201C6006A4001D60F9 /* StartUpViewController.m in Sources */,
 				41896B0B1C6003B3001D60F9 /* AppDelegate.m in Sources */,
+				41FCB7701C68047600807FD3 /* AboutViewController.m in Sources */,
 				41306D301C650D0D00FF4A33 /* MailSender.m in Sources */,
 				41306D2A1C64CEC400FF4A33 /* BatteryChecker.m in Sources */,
 				41896B081C6003B3001D60F9 /* main.m in Sources */,
@@ -411,6 +417,7 @@
 			baseConfigurationReference = 3079963EAA604ABE8BD3DF55 /* Pods-ChildTracer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChildTracer/Info.plist;
@@ -419,6 +426,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Mask.ChildTracer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ChildTracer/ChildTracer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -428,6 +437,7 @@
 			baseConfigurationReference = DFC2973A1D9AED88EFDFD4AF /* Pods-ChildTracer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChildTracer/Info.plist;
@@ -436,6 +446,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Mask.ChildTracer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ChildTracer/ChildTracer-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

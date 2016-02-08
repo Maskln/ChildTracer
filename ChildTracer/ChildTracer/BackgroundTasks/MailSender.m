@@ -26,15 +26,15 @@
 
 - (IBAction)sendEmailTo: (NSString*) emailAddress : (NSString*) andEmailMessage {
     SKPSMTPMessage *sendMail = [[SKPSMTPMessage alloc] init];
-    [sendMail setFromEmail:@"pesho.the.great@gmail.com"];  // Change to your email address
-    [sendMail setToEmail: emailAddress]; // Load this, or have user enter this
+    [sendMail setFromEmail:@"pesho.the.great@gmail.com"];
+    [sendMail setToEmail: emailAddress];
     [sendMail setRelayHost:@"smtp.gmail.com"];
-    [sendMail setRequiresAuth:YES]; // GMail requires this
-    [sendMail setLogin:@"pesho.the.great"]; // Same as the "setFromEmail:" email
-    [sendMail setPass:@"12345678q123"]; // Password for the Gmail account that you are sending from
-    [sendMail setSubject:@"Test"]; // Change this to change the subject of the email
-    [sendMail setWantsSecure:YES]; // Gmail Requires this
-    [sendMail setDelegate:self]; // Required    
+    [sendMail setRequiresAuth:YES];
+    [sendMail setLogin:@"pesho.the.great"];
+    [sendMail setPass:@"12345678q123"];
+    [sendMail setSubject:@"Test"];
+    [sendMail setWantsSecure:YES];
+    [sendMail setDelegate:self];
    
     NSDictionary *plainPart = [NSDictionary dictionaryWithObjectsAndKeys:@"text/plain", kSKPSMTPPartContentTypeKey, andEmailMessage, kSKPSMTPPartMessageKey, @"8bit" , kSKPSMTPPartContentTransferEncodingKey, nil];
     

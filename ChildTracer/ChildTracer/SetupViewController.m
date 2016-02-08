@@ -44,25 +44,29 @@
 }
 
 //TODO: Rename to Trace
-- (IBAction)sendMail:(id)sender {
+- (IBAction)trace:(id)sender {
     
     AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     
     if (![Validators validateBatteryLevel: self.batteryLevelField.text]) {
         if (((int)self.batteryLevelField.text < 1) || ((int)self.batteryLevelField.text > 100)) {
             [self alertShow: @"Empty or Incorrect" : @"The Battery Level must be between 1 and 100!"];
+            return;
         }
     }else if (![Validators validateEmail:self.mailField.text]) {
          [self alertShow: @"Empty or Incorrect" : @"The Email address is empty ot incorrect!"];
+        return;
     } else if (![Validators validatePhoneNumber: self.phoneNumberField.text]) {
         [self alertShow: @"Empty or Incorrect" : @"The phone number must start with 359 and contains 12 digits!"];
+        return;
     }
     
     appDelegate.batteryLevel = self.batteryLevelField.text;
     appDelegate.emailAddress = self.mailField.text;
     appDelegate.phoneNumber = self.phoneNumberField.text;
-    
-}
+    [self alertShow: @"Congrats" : @"You may now leave the application to run in background mode!"];
+  
+ }
 
  //TODO: Extract helper class with methods for hiding keyboard
 -(void)textFieldShouldReturn:(UITextField *)textField
